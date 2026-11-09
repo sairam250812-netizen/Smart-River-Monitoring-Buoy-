@@ -3,339 +3,110 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="RiverGuard AI is a smart river monitoring and floating waste collection system that uses AI, sensors, and automation to reduce river pollution."
-    />
-    <title>RiverGuard AI | Monitor. Detect. Collect. Protect.</title>
+    <meta name="theme-color" content="#f6fbf9" />
+    <meta name="description" content="Meet RiverGuard AI: a smart floating concept for river monitoring and waste collection, designed to help protect waterways with AI, sensors, and thoughtful engineering." />
+    <title>RiverGuard AI — A clearer future for our rivers</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
-      <nav class="navbar container">
-        <div class="brand">
-          <div class="brand-mark">RG</div>
-          <div>
-            <span class="brand-name">RIVERGUARD AI</span>
-            <small>Smart River Monitoring</small>
-          </div>
+      <nav class="navbar container" aria-label="Main navigation">
+        <a class="brand" href="#home" aria-label="RiverGuard AI home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 42 42" fill="none"><path d="M7 25c5-7 10-7 15 0s10 7 15 0M7 32c5-7 10-7 15 0s10 7 15 0" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M21 7v12m-5-7 5-5 5 5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="brand-copy"><strong>riverguard<span>ai</span></strong><small>SMART RIVER SYSTEMS</small></span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
+        <div class="nav-links" id="navLinks">
+          <a href="#about">Our mission</a><a href="#how-it-works">How it works</a><a href="#technology">Technology</a><a href="#impact">Impact</a>
+          <a class="nav-cta" href="#assistant">Meet the AI assistant <span aria-hidden="true">↗</span></a>
         </div>
-
-        <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#how-it-works">How It Works</a>
-          <a href="#technology">Technology</a>
-          <a href="#impact">Impact</a>
-          <a href="#assistant">AI Assistant</a>
-          <a href="#future">Future Scope</a>
-          <a href="#contact">Contact</a>
-        </div>
-
-        <a class="nav-button" href="#assistant">Explore Project</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero" id="home">
+        <div class="hero-wash" aria-hidden="true"></div>
         <div class="container hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow">Monitor. Detect. Collect. Protect.</p>
-            <h1>Smart river protection powered by AI and clean technology.</h1>
-            <p class="lead">
-              RiverGuard AI is an innovative floating system designed to detect and collect
-              floating waste from rivers while monitoring water quality in real time. It helps
-              reduce pollution, protect aquatic life, and support cleaner and healthier river
-              ecosystems.
-            </p>
-            <div class="hero-actions">
-              <a class="primary-button" href="#about">Explore Project</a>
-              <a class="secondary-button" href="#assistant">Ask RiverGuard AI</a>
+            <div class="eyebrow"><span class="eyebrow-line"></span> A smarter way to care for our waterways</div>
+            <h1>Cleaner rivers<br />start with <em>careful</em><br />thinking.</h1>
+            <p class="hero-lead">Meet RiverGuard AI: a floating innovation concept that brings together water monitoring, AI-assisted waste detection, and practical collection to help protect our rivers.</p>
+            <div class="hero-actions"><a class="button button-primary" href="#about">Discover RiverGuard <span aria-hidden="true">→</span></a><a class="text-link" href="#how-it-works"><span class="play-icon" aria-hidden="true">↓</span> See how it works</a></div>
+            <div class="hero-note"><span class="note-icon" aria-hidden="true">✳</span><span>Designed for a future where technology works <strong>with nature.</strong></span></div>
+          </div>
+          <div class="hero-art" aria-label="River landscape illustration">
+            <div class="art-label"><span class="label-dot"></span> AN IDEA FOR HEALTHIER WATERWAYS</div>
+            <div class="river-image"></div>
+            <div class="image-shade"></div>
+            <div class="river-line river-line-one"></div><div class="river-line river-line-two"></div>
+            <div class="buoy" aria-label="Illustration of the RiverGuard floating buoy"><div class="buoy-top"><span></span></div><div class="buoy-body"><i></i><i></i><i></i></div><div class="buoy-net"></div></div>
+            <div class="art-caption"><span class="caption-icon">⌁</span><span><strong>RiverGuard AI</strong><small>Smart floating river guardian</small></span></div>
+            <div class="art-side-note">MONITOR <span>·</span> DETECT <span>·</span> PROTECT</div>
+          </div>
+        </div>
+        <div class="hero-bottom container"><span>MONITOR. DETECT. COLLECT. PROTECT.</span><span class="scroll-cue">SCROLL TO EXPLORE <b>↓</b></span></div>
+      </section>
+
+      <section class="intro-strip" aria-label="Project summary"><div class="container intro-inner"><p>Small signals can lead to <strong>meaningful change.</strong></p><div class="intro-tags"><span>Water quality</span><i></i><span>AI vision</span><i></i><span>Thoughtful collection</span></div></div></section>
+
+      <section class="section about-section" id="about">
+        <div class="container about-grid">
+          <div class="section-kicker"><span>01 / THE WHY</span><span class="kicker-rule"></span></div>
+          <div class="about-content"><p class="eyebrow">A river is a living system</p><h2>Healthy waterways<br />need <em>our attention.</em></h2></div>
+          <div class="about-copy"><p>Floating litter can travel far, harm wildlife, and break down into smaller pieces that are difficult to remove. Traditional cleanup is important, but teams also need better ways to spot changing conditions and understand where attention is needed.</p><p>RiverGuard AI explores how connected sensors and AI-assisted vision could help make river care more informed, timely, and focused.</p><a class="under-link" href="#impact">Why river care matters <span>↗</span></a></div>
+          <div class="about-quote"><span class="quote-mark">“</span><p>Better observation is a first step toward better protection.</p><span class="quote-line"></span></div>
+        </div>
+      </section>
+
+      <section class="section process-section" id="how-it-works">
+        <div class="container">
+          <div class="section-top"><div><p class="eyebrow">From observation to action</p><h2>A thoughtful journey<br />across the <em>water.</em></h2></div><p class="section-summary">Each part has a role: observe the river, recognize what may need attention, and share useful information.</p></div>
+          <div class="process-layout"><div class="process-visual"><div class="process-sun"></div><div class="process-hill hill-back"></div><div class="process-hill hill-front"></div><div class="process-water"><span></span><span></span><span></span><span></span></div><div class="mini-buoy"><i></i><b></b></div><div class="process-location"><span>⌖</span> LOCATION LOGGED</div></div>
+            <div class="steps-list">
+              <article class="step-row"><span class="step-number">01</span><div><h3>Move across the water</h3><p>The buoy travels through a selected area to observe the river surface.</p></div><span class="step-symbol">↗</span></article>
+              <article class="step-row"><span class="step-number">02</span><div><h3>Measure water conditions</h3><p>Sensors gather readings such as pH, turbidity, and temperature.</p></div><span class="step-symbol">⌁</span></article>
+              <article class="step-row"><span class="step-number">03</span><div><h3>See and identify floating waste</h3><p>A camera captures images; AI can help identify likely waste for review.</p></div><span class="step-symbol">◎</span></article>
+              <article class="step-row"><span class="step-number">04</span><div><h3>Collect and share information</h3><p>A net can collect suitable floating debris, while GPS and communications can record useful location data.</p></div><span class="step-symbol">→</span></article>
             </div>
-            <ul class="hero-metrics">
-              <li><strong>AI</strong><span>Waste detection</span></li>
-              <li><strong>GPS</strong><span>Location tracking</span></li>
-              <li><strong>Water</strong><span>Quality monitoring</span></li>
-            </ul>
           </div>
+          <p class="prototype-note"><span>i</span> Project concept: actual operation depends on the prototype, testing, local conditions, and responsible deployment.</p>
+        </div>
+      </section>
 
-          <div class="hero-visual">
-            <div class="image-card">
-              <img
-                src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1200&q=80"
-                alt="RiverGuard AI floating buoy concept"
-              />
-              <div class="floating-badge">
-                <span class="badge-dot"></span>
-                RiverGuard AI Buoy
-              </div>
-            </div>
+      <section class="section technology-section" id="technology">
+        <div class="container">
+          <div class="section-top tech-heading"><div><p class="eyebrow">The parts behind the idea</p><h2>Technology with<br /><em>a purpose.</em></h2></div><p class="section-summary">A mix of familiar electronics and sensing tools could help the buoy observe, decide, and communicate.</p></div>
+          <div class="tech-grid">
+            <article class="tech-card tech-feature"><div class="tech-card-top"><span class="tech-icon">⌘</span><span>CONTROL</span></div><h3>Arduino UNO + ESP32</h3><p>The UNO can coordinate control tasks. The ESP32 adds wireless connectivity and can support data exchange between system components.</p><div class="tech-chips"><span>Microcontroller</span><span>Connectivity</span></div></article>
+            <article class="tech-card"><div class="tech-card-top"><span class="tech-icon">◉</span><span>PERCEPTION</span></div><h3>Camera + AI vision</h3><p>Image analysis can help recognize likely floating waste. Detection quality depends on camera views and training data.</p></article>
+            <article class="tech-card"><div class="tech-card-top"><span class="tech-icon">⌖</span><span>LOCATION</span></div><h3>GPS module</h3><p>Records the buoy's location so observations can be connected to places along the river.</p></article>
+            <article class="tech-card"><div class="tech-card-top"><span class="tech-icon">≈</span><span>WATER SENSING</span></div><h3>pH + turbidity</h3><p>pH estimates acidity or alkalinity; turbidity indicates how cloudy the water is from suspended particles.</p></article>
+            <article class="tech-card"><div class="tech-card-top"><span class="tech-icon">℃</span><span>CONDITIONS</span></div><h3>Temperature sensor</h3><p>Measures water temperature, a useful environmental observation when interpreted with other information.</p></article>
+            <article class="tech-card"><div class="tech-card-top"><span class="tech-icon">⌁</span><span>COMMUNICATION</span></div><h3>GSM module</h3><p>Can send readings or status updates over cellular networks where coverage is available.</p></article>
+            <article class="tech-card"><div class="tech-card-top"><span class="tech-icon">⟳</span><span>MOTION</span></div><h3>BLDC motors</h3><p>Provide controlled movement for navigation or a collection mechanism, subject to the final design.</p></article>
+            <article class="tech-card tech-feature"><div class="tech-card-top"><span class="tech-icon">⌑</span><span>COLLECTION</span></div><h3>Net-based collection</h3><p>A carefully designed net can gather suitable floating debris. It needs safe handling, maintenance, and responsible disposal.</p><div class="tech-chips"><span>Practical design</span><span>Waste capture</span></div></article>
           </div>
         </div>
       </section>
 
-      <section id="about" class="content-section">
-        <div class="container section-heading">
-          <p class="eyebrow accent">About RiverGuard AI</p>
-          <h2>Turning river cleanup into a smart, science-based solution.</h2>
-        </div>
+      <section class="impact-section" id="impact"><div class="container impact-layout"><div><p class="eyebrow">A better relationship with our rivers</p><h2>Observe more.<br /><em>Protect better.</em></h2><p class="impact-copy">RiverGuard AI is a student innovation concept, not a claim of measured cleanup results. Its goal is to explore how timely observations and practical tools can support people caring for waterways.</p><a class="button button-light" href="#assistant">Ask the RiverGuard assistant <span>→</span></a></div><div class="impact-points"><article><span>01</span><div><h3>Reduce floating litter</h3><p>Explore ways to capture suitable surface waste before it travels further.</p></div></article><article><span>02</span><div><h3>Find areas needing attention</h3><p>Use location-linked observations to help guide follow-up and cleanup planning.</p></div></article><article><span>03</span><div><h3>Build environmental awareness</h3><p>Make water conditions and pollution challenges easier to discuss and understand.</p></div></article></div></div></section>
 
-        <div class="container feature-grid two-column">
-          <div>
-            <p>
-              RiverGuard AI is a floating smart monitoring and collection system designed to
-              address the growing problem of floating waste in rivers and waterways. The project
-              combines water-quality sensing, computer vision, AI detection, GPS tracking, and a
-              net-based collection mechanism into one intelligent platform.
-            </p>
-            <p>
-              River pollution is a serious environmental challenge affecting ecosystems, drinking
-              water, aquatic biodiversity, and public health. Plastic bottles, wrappers, and other
-              floating waste often accumulate in rivers and create long-term damage to the
-              environment. Traditional cleaning methods are often reactive, limited, and not
-              continuous.
-            </p>
-          </div>
-
-          <div class="info-panel">
-            <h3>Why this matters</h3>
-            <ul>
-              <li>Floating waste threatens fish, birds, and other aquatic life.</li>
-              <li>Polluted rivers worsen water quality and biodiversity loss.</li>
-              <li>Manual cleaning is slow, inefficient, and difficult to scale.</li>
-              <li>Smart monitoring helps identify pollution sources and hotspots.</li>
-            </ul>
-          </div>
+      <section class="section assistant-section" id="assistant">
+        <div class="container assistant-layout"><div class="assistant-intro"><p class="eyebrow">Curious? Ask away.</p><h2>Meet your river<br /><em>knowledge guide.</em></h2><p>Ask about the project, how the buoy works, its sensors, AI, or the bigger picture of river protection. Friendly answers, made easy to understand.</p><div class="assistant-prompt-note"><span>✦</span> Powered by Google Gemini when the API is configured.</div></div>
+          <div class="chatbot-shell"><div class="chatbot-header"><div class="assistant-avatar">R<span>✳</span></div><div class="assistant-title"><strong>RiverGuard AI Assistant</strong><small><span class="status-dot"></span> Ready to explore with you</small></div><button id="clearChat" class="clear-chat" type="button" aria-label="Clear chat">↻</button></div><div id="chatMessages" class="chat-messages" aria-live="polite"><div class="message assistant">Hello! I'm RiverGuard AI Assistant. Ask me anything about our smart river-monitoring and waste-collection innovation!</div></div><div class="suggested-questions"><button class="suggestion" type="button">How does the buoy work?</button><button class="suggestion" type="button">What do the sensors measure?</button><button class="suggestion" type="button">What are its limitations?</button></div><form id="chatForm" class="chat-form"><label class="sr-only" for="userInput">Your question</label><input id="userInput" type="text" placeholder="Ask a question about RiverGuard..." autocomplete="off" maxlength="1000" /><button type="submit" aria-label="Send message">Send <span>↑</span></button></form><p class="chat-disclaimer">AI can make mistakes. Please verify important information.</p></div>
         </div>
       </section>
 
-      <section id="how-it-works" class="content-section alt-section">
-        <div class="container section-heading">
-          <p class="eyebrow accent">How It Works</p>
-          <h2>From river patrol to waste collection.</h2>
-        </div>
+      <section class="future-section" id="future"><div class="container future-layout"><div><p class="eyebrow">The next current</p><h2>Room to grow,<br /><em>room to help.</em></h2></div><div class="future-list"><span>More accurate waste classification</span><span>Solar-assisted, energy-aware operation</span><span>Connected buoys for broader observation</span><span>Richer water-quality sensing</span><span>Pollution maps that support community action</span></div></div></section>
 
-        <div class="container timeline">
-          <div class="step-card">
-            <span>01</span>
-            <h3>Buoy movement</h3>
-            <p>The floating buoy moves across the water to monitor selected river areas.</p>
-          </div>
-          <div class="step-card">
-            <span>02</span>
-            <h3>Sensor monitoring</h3>
-            <p>Sensors continuously measure water quality and environmental conditions.</p>
-          </div>
-          <div class="step-card">
-            <span>03</span>
-            <h3>Camera capture</h3>
-            <p>A visual camera scans the river surface for floating waste objects.</p>
-          </div>
-          <div class="step-card">
-            <span>04</span>
-            <h3>AI detection</h3>
-            <p>AI identifies waste using image-based analysis and pattern recognition.</p>
-          </div>
-          <div class="step-card">
-            <span>05</span>
-            <h3>Collection mechanism</h3>
-            <p>Suitable waste is lifted using a net-based system for collection.</p>
-          </div>
-          <div class="step-card">
-            <span>06</span>
-            <h3>GPS logging</h3>
-            <p>The location of waste zones is recorded for monitoring and reporting.</p>
-          </div>
-          <div class="step-card">
-            <span>07</span>
-            <h3>Monitoring platform</h3>
-            <p>Collected data can be shared with a monitoring dashboard for analysis.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="technology" class="content-section">
-        <div class="container section-heading">
-          <p class="eyebrow accent">Technologies Used</p>
-          <h2>Built with practical electronics and environmental intelligence.</h2>
-        </div>
-
-        <div class="container tech-grid">
-          <article class="tech-item">
-            <h3>Arduino UNO</h3>
-            <p>Acts as the central microcontroller to coordinate system operations and control logic.</p>
-          </article>
-          <article class="tech-item">
-            <h3>ESP32</h3>
-            <p>Enables wireless communication, processing, and smart connectivity for the buoy.</p>
-          </article>
-          <article class="tech-item">
-            <h3>AI-based waste detection</h3>
-            <p>Improves the system’s ability to recognize floating waste from visual information.</p>
-          </article>
-          <article class="tech-item">
-            <h3>GPS module</h3>
-            <p>Tracks buoy locations and records polluted zones with position data.</p>
-          </article>
-          <article class="tech-item">
-            <h3>pH sensor</h3>
-            <p>Measures the water’s acidity or alkalinity to assess water quality.</p>
-          </article>
-          <article class="tech-item">
-            <h3>Turbidity sensor</h3>
-            <p>Detects suspended particles and pollution levels in the water.</p>
-          </article>
-          <article class="tech-item">
-            <h3>Water temperature sensor</h3>
-            <p>Monitors thermal changes that can influence aquatic conditions and pollution patterns.</p>
-          </article>
-          <article class="tech-item">
-            <h3>GSM module</h3>
-            <p>Supports communication and remote data transmission for monitoring.</p>
-          </article>
-          <article class="tech-item">
-            <h3>BLDC motors</h3>
-            <p>Drive the buoy and collection mechanism efficiently with reliable motion control.</p>
-          </article>
-          <article class="tech-item">
-            <h3>Net-based collection mechanism</h3>
-            <p>Physically gathers floating waste from the river surface in an environmentally focused way.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="impact" class="content-section alt-section">
-        <div class="container section-heading">
-          <p class="eyebrow accent">Environmental Impact</p>
-          <h2>Creating cleaner rivers through timely detection and action.</h2>
-        </div>
-
-        <div class="container impact-grid">
-          <div class="impact-card">
-            <h3>Waste reduction</h3>
-            <p>Helps remove floating plastic and waste before it spreads further downstream.</p>
-          </div>
-          <div class="impact-card">
-            <h3>Cleaner rivers</h3>
-            <p>Supports healthier river ecosystems and improves the visual and ecological quality of water bodies.</p>
-          </div>
-          <div class="impact-card">
-            <h3>Pollution mapping</h3>
-            <p>Helps identify polluted hotspots and detect where cleanup efforts are most needed.</p>
-          </div>
-          <div class="impact-card">
-            <h3>Water quality awareness</h3>
-            <p>Provides information that increases public awareness and supports environmental responsibility.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="assistant" class="content-section assistant-section">
-        <div class="container section-heading">
-          <p class="eyebrow accent">AI Assistant</p>
-          <h2>Ask RiverGuard AI Assistant anything about the project.</h2>
-        </div>
-
-        <div class="container chatbot-panel">
-          <div class="chatbot-shell">
-            <div class="chatbot-header">
-              <div class="assistant-status">
-                <span class="live-indicator"></span>
-                RiverGuard AI Assistant
-              </div>
-              <span class="assistant-tag">Online</span>
-            </div>
-
-            <div id="chatMessages" class="chat-messages" aria-live="polite">
-              <div class="message assistant">
-                Hello! I'm RiverGuard AI Assistant. Ask me anything about our smart river-monitoring and waste-collection innovation!
-              </div>
-            </div>
-
-            <div class="suggested-questions">
-              <button class="suggestion" type="button">How does the buoy work?</button>
-              <button class="suggestion" type="button">What sensors are used?</button>
-              <button class="suggestion" type="button">How does AI detect waste?</button>
-              <button class="suggestion" type="button">Why is this important?</button>
-            </div>
-
-            <form id="chatForm" class="chat-form">
-              <input
-                id="userInput"
-                type="text"
-                placeholder="Ask about the project, sensors, AI, or river pollution..."
-                autocomplete="off"
-              />
-              <button type="submit">Send</button>
-            </form>
-          </div>
-        </div>
-      </section>
-
-      <section id="future" class="content-section">
-        <div class="container section-heading">
-          <p class="eyebrow accent">Future Scope</p>
-          <h2>Expanding capabilities for wider impact.</h2>
-        </div>
-
-        <div class="container future-grid">
-          <div class="future-item">
-            <h3>Advanced AI waste classification</h3>
-            <p>Improved identification of plastic, organic waste, and other floating materials.</p>
-          </div>
-          <div class="future-item">
-            <h3>Solar-powered operation</h3>
-            <p>Supports sustainable energy use and continuous operation in remote locations.</p>
-          </div>
-          <div class="future-item">
-            <h3>Multiple connected buoys</h3>
-            <p>Enables broader monitoring of long river stretches and larger surfaces.</p>
-          </div>
-          <div class="future-item">
-            <h3>Real-time pollution mapping</h3>
-            <p>Helps local authorities and communities identify pollution hotspots quickly.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="content-section contact-section">
-        <div class="container section-heading">
-          <p class="eyebrow accent">Contact & Credits</p>
-          <h2>Project creators and acknowledgements.</h2>
-        </div>
-
-        <div class="container contact-grid">
-          <div class="contact-card">
-            <h3>Project Team</h3>
-            <p>RiverGuard AI is developed as an innovative environmental technology project to address river pollution and sustainable water management.</p>
-          </div>
-          <div class="contact-card">
-            <h3>School / Institution</h3>
-            <p>Designed for demonstration in science exhibitions, innovation competitions, and academic environmental projects.</p>
-          </div>
-          <div class="contact-card">
-            <h3>Acknowledgements</h3>
-            <p>We acknowledge the importance of environmental awareness, smart innovation, and responsible engineering for a cleaner future.</p>
-          </div>
-        </div>
-      </section>
+      <section class="contact-section" id="contact"><div class="container contact-layout"><div><p class="eyebrow">Made for learning, built for impact</p><h2>Good ideas flow<br />when we <em>work together.</em></h2></div><div class="contact-card"><span class="contact-spark">✳</span><h3>Project credits</h3><p>RiverGuard AI is a student innovation project for river monitoring and floating-waste collection. Add your creator names, school or institution, mentor, and acknowledgements here.</p><div class="credit-line"><span>PROJECT</span><strong>RiverGuard AI</strong></div><div class="credit-line"><span>TAGLINE</span><strong>Monitor. Detect. Collect. Protect.</strong></div></div></div></section>
     </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <div>
-          <strong>RIVERGUARD AI</strong>
-          <p>Monitor. Detect. Collect. Protect.</p>
-        </div>
-        <p>Smart river monitoring and floating waste collection for cleaner waterways.</p>
-      </div>
-    </footer>
-
+    <footer class="site-footer"><div class="container footer-inner"><a class="brand footer-brand" href="#home"><span class="brand-mark"><svg viewBox="0 0 42 42" fill="none"><path d="M7 25c5-7 10-7 15 0s10 7 15 0M7 32c5-7 10-7 15 0s10 7 15 0" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M21 7v12m-5-7 5-5 5 5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="brand-copy"><strong>riverguard<span>ai</span></strong><small>SMART RIVER SYSTEMS</small></span></a><p>For rivers, for life, for the generations ahead.</p><a href="#home" class="back-top">BACK TO TOP ↑</a></div><div class="container footer-bottom"><span>© RiverGuard AI · Student innovation concept</span><span>Monitor. Detect. Collect. Protect.</span></div></footer>
     <script src="script.js"></script>
   </body>
 </html>

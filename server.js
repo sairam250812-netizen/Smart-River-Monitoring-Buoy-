@@ -21,81 +21,75 @@ app.post('/api/chat', async (req, res) => {
     return res.status(400).json({ error: 'A message is required.' });
   }
 
-  const apiKey = process.env.OPENAI_API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
-    return res.status(500).json({
-      error: 'OPENAI_API_KEY is not configured. Add it to your .env file before starting the app.'
+    return res.status(503).json({
+      error: 'The AI assistant is not configured yet. Add GEMINI_API_KEY to the server environment.'
     });
   }
 
-  const model = process.env.OPENAI_MODEL || 'gpt-4o-mini';
-
+  const model = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
   const systemPrompt = `You are RiverGuard AI Assistant, a friendly and intelligent helper for the RiverGuard AI project.
 
-You explain the project clearly to students, teachers, visitors, and judges.
-Focus on these areas:
-- Smart river monitoring and floating waste collection
-- Pollution problems in rivers
-- How the buoy moves and monitors water
-- Sensor and hardware components like Arduino UNO, ESP32, GPS, pH, turbidity, temperature, GSM, BLDC motors, and waste collection net
-- AI-based waste detection and classification
-- Environmental impact and pollution awareness
-- Advantages, limitations, and future improvements
-- Real-world importance of clean rivers and sustainability
+Explain the project clearly to students, teachers, visitors, and judges. Cover smart river monitoring and floating waste collection; river pollution; buoy operation; Arduino UNO, ESP32, GPS, pH, turbidity, water-temperature and GSM sensors/modules, BLDC motors, and the collection net; AI-based waste detection; environmental impact; advantages, limitations, and future improvements.
 
-Give simple, informative, and confident explanations. Keep answers practical, clear, and not overly technical unless asked.`;
+Use easy-to-understand language, practical explanations, and a warm, encouraging tone. Avoid claiming the project has live sensors, completed deployments, or measured environmental results unless the user provides evidence. Be honest about limitations and distinguish planned features from demonstrated capabilities.`;
 
-  const messages = [
-    { role: 'system', content: systemPrompt },
-    ...history.slice(-8).map((entry) => ({
-      role: entry.role === 'assistant' ? 'assistant' : 'user',
-      content: String(entry.content || '').trim()
-    })),
-    { role: 'user', content: String(message).trim() }
+  const validHistory = Array.isArray(history)
+    ? history
+        .slice(-10)
+        .filter((entry) => entry && ['user', 'assistant', 'model'].includes(entry.role))
+        .map((entry) => ({
+          role: entry.role === 'assistant' ? 'model' : entry.role,
+          parts: [{ text: String(entry.content || '').trim().slice(0, 4000) }]
+        }))
+        .filter((entry) => entry.parts[0].text)
+    : [];
+
+  const contents = [
+    ...validHistory,
+    { role: 'user', parts: [{ text: String(message).trim().slice(0, 4000) }] }
   ];
 
   try {
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        model,
-        messages,
-        temperature: 0.7,
-        max_tokens: 500
-      })
-    });
-
-    const rawText = await response.text();
-
-    if (!response.ok) {
-      let errorDetails = 'The AI service returned an error.';
-      try {
-        const parsed = JSON.parse(rawText);
-        errorDetails = parsed?.error?.message || errorDetails;
-      } catch (err) {
-        errorDetails = rawText || errorDetails;
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-goog-api-key': apiKey
+        },
+        body: JSON.stringify({
+          systemInstruction: { parts: [{ text: systemPrompt }] },
+          contents,
+          generationConfig: { temperature: 0.7, maxOutputTokens: 600 }
+        })
       }
+    );
 
-      return res.status(502).json({
-        error: `AI API failed: ${errorDetails}`
-      });
+    const data = await response.json();
+    if (!response.ok) {
+      const message = data?.error?.message || 'The Gemini API returned an error.';
+      return res.status(502).json({ error: `Gemini API error: ${message}` });
     }
 
-    const data = JSON.parse(rawText);
-    const reply = data?.choices?.[0]?.message?.content?.trim();
+    const reply = data?.candidates?.[0]?.content?.parts
+      ?.map((part) => part.text || '')
+      .join('')
+      .trim();
 
     if (!reply) {
-      return res.status(500).json({ error: 'No response returned by the AI model.' });
+      return res.status(502).json({
+        error: 'Gemini could not provide a response to that message. Please try asking another way.'
+      });
     }
 
     return res.json({ reply });
   } catch (error) {
-    return res.status(500).json({
-      error: 'Unable to contact the AI API. Please check your internet connection and API key.'
+    console.error('Gemini request failed:', error.message);
+    return res.status(502).json({
+      error: 'Unable to contact Gemini right now. Please try again in a moment.'
     });
   }
 });
@@ -104,6 +98,6 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log(`RiverGuard AI website running on http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`RiverGuard AI website running on port ${PORT}`);
 });
